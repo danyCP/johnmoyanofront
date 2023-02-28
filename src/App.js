@@ -8,7 +8,7 @@ function App() {
   const [pro, setPro] = useState([]);
 
   const cargaPro = () => {
-    axios.get("https://reactback-production.up.railway.app/api/list").then(({ data }) => setPro(data));
+    axios.get("https://johnmoyano-production.up.railway.app/api/list").then(({ data }) => setPro(data));
   };
 
   useEffect(() => {

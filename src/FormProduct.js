@@ -11,7 +11,7 @@ const FormProduct = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('https://reactback-production.up.railway.app/api/product', product)
+    axios.post('https://johnmoyano-production.up.railway.app/api/product', product)
       .then((response) => {
         console.log(response);
         setProduct({ name: '', price: '', expiry_date: '' });
@@ -22,8 +22,8 @@ const FormProduct = () => {
   };
 
   return (
-    <div className="mb-3 border rounded p-3 mt-2">
-      <h3 className="mb-3 mt-2">Agregar Producto</h3>
+    <section  >
+      <h3 center >Agregar Producto</h3>
       <form onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="name">Nombre:</Label>
@@ -39,7 +39,7 @@ const FormProduct = () => {
         </FormGroup>
         <Button type="submit" color="primary">Agregar</Button>
       </form>
-    </div>
+    </section>
   );
 };
 

@@ -6,7 +6,7 @@ import axios from "axios";
 const ListProduct = ({ productos, setProductos }) => {
 
   const deleteProduct = (id) => {
-    axios.delete(`https://reactback-production.up.railway.app/api/product/${id}`)
+    axios.delete(`https://johnmoyano-production.up.railway.app/api/product/${id}`)
       .then(() => {
         setProductos(productos.filter((pro) => pro._id !== id));
       })
@@ -17,7 +17,7 @@ const ListProduct = ({ productos, setProductos }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get("https://reactback-production.up.railway.app/api/list")
+      axios.get("https://johnmoyano-production.up.railway.app/api/list")
         .then(({ data }) => {
           setProductos(data);
         })
@@ -31,30 +31,24 @@ const ListProduct = ({ productos, setProductos }) => {
 
   return (
     <>
-    <center className="mt-3"><h2 className="blue">Jonnathan Gallegos - M5B</h2></center>
-      <h3 className="mb-3 mt-2">Lista de Productos</h3>
-      {productos.map((pro) => (
-        <div className="mb-3 border rounded p-3" key={pro._id}>
-          <div className="d-flex justify-content-between mb-1">
-            <div className="fw-bold">{pro.name}</div>
-            <div className="text-muted small">
-              {/* <FontAwesomeIcon icon={faEdit} className="cursor-pointer" /> */}
-              <FontAwesomeIcon icon={faTrash} className="cursor-pointer ms-2" onClick={() => deleteProduct(pro._id)} />
-            </div>
-          </div>
-          <div>
+      <section center>
+        <center ><h2 className="blue">John Moyano - M5B</h2></center>
+        {productos.map((pro) => (
+          <div key={pro._id}>
             <div >
-              <small>Costo: {pro.price}</small>
+              <div className="fw-bold">{pro.name}</div>
+              <div className="text-muted small">
+
+                <FontAwesomeIcon icon={faTrash} className="cursor-pointer ms-6" onClick={() => deleteProduct(pro._id)} />
+              </div>
             </div>
             <div>
-              <small>
-                Fecha de caducidad:{" "}
-                {new Date(pro.expiry_date).toLocaleDateString()}
-              </small>
+
+
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </section>
     </>
   );
 };

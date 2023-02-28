@@ -22,8 +22,7 @@ const FormProduct = () => {
   };
 
   return (
-    <section  >
-      <h3 center >Agregar Producto</h3>
+    <section>
       <form onSubmit={handleSubmit}>
         <FormGroup>
           <Label for="name">Nombre:</Label>

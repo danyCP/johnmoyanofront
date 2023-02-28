@@ -31,8 +31,10 @@ const ListProduct = ({ productos, setProductos }) => {
 
   return (
     <>
+    <center >
       <section center>
-        <center ><h2 className="blue">John Moyano - M5B</h2></center>
+        <center ><h2 >John Moyano - M5B</h2></center>
+        <center ><h2 >TAREA</h2></center>
         {productos.map((pro) => (
           <div key={pro._id}>
             <div >
@@ -49,6 +51,7 @@ const ListProduct = ({ productos, setProductos }) => {
           </div>
         ))}
       </section>
+      </center>
     </>
   );
 };

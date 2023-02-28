@@ -19,18 +19,11 @@ function App() {
 
   return (
     <>
-    <Container>
-      <Row>
-        <Col md={6}>
-          <ListProduct productos={pro} />
-        </Col>
-
-        <Col md={6}>
-         <FormProduct/>
-        </Col>
-      </Row>
-    </Container>
-  </>
+      <section>
+        <ListProduct productos={pro} />
+        <FormProduct />
+      </section>
+    </>
   );
 }
 
